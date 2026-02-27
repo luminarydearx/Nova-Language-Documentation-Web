@@ -48,7 +48,7 @@ export default function GettingStartedPage() {
 
       <h3>Step 1 — Clone or download the source</h3>
       <CodeBlock
-        code={`git clone https://github.com/luminar-dev/nova-lang.git\ncd nova-lang`}
+        code={`git clone https://github.com/dearlyfebrianos/Nova-Language.git\ncd nova-lang`}
         language="bash"
         filename="terminal"
       />

@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌌 Nova Documentation Portal
 
-## Getting Started
+![Nova Logo](./public/icon_nova.png)
 
-First, run the development server:
+This is the official documentation website for the **Nova Programming Language** — a modern, expressive, space-themed language built on Java 21. This web application serves as the primary gateway for users to learn Nova, read the CLI references, and explore the core language features.
+
+## ✨ Key Features
+
+- **Cosmic Aesthetics**: Deep-space color palettes (`nova-black`, `nova-deep`, `nova-cyan`), glowing neon element overlays (`drop-shadow`), and advanced CSS `@keyframes` (Supernova explosions, float, fade-up, star twinkle) for a stunning visual experience.
+- **Dynamic Routing & Navigation**: Modern App Router architecture. Sidebar navigation includes an automated feature interceptor that reroutes any `badge: "Coming Soon"` item to a beautiful dynamic "Under Construction" page.
+- **Secure Translation Engine**: Native, client-side, layout-shift-free Google Translate dropdown setup. Secures the user's language selection with Base64 obfusation and LocalStorage salt (`N0v4-S3cur3-L4ng:`) to prevent malicious console manipulations of cookies.
+- **Responsive & Premium UI**: Custom scrollbars, glassmorphic cards, terminal-mimicking code blocks (`<CodeBlock />`), and mobile-responsive layouts.
+- **Lightning Fast**: Built on Next.js Turbopack with Server Components where applicable, offering instant load times and excellent SEO.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js v16+ (App Router)](https://nextjs.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Language**: TypeScript
+- **Fonts**: Orbitron (Display), DM Sans (Body), JetBrains Mono (Code)
+
+## 📁 Project Structure
+
+```bash
+nova-documentation/
+├── public/                 # Static assets (icon_nova.png, SVG icons)
+├── src/
+│   ├── app/                # Next.js 16 App Router
+│   │   ├── docs/           # Documentation pages (Routing, Examples, Language specs)
+│   │   ├── globals.css     # Global styles, Tailwind @theme, and complex animations
+│   │   ├── layout.tsx      # Root layout, font definitions, metadata
+│   │   └── page.tsx        # Landing Page (Hero section, Features, Installation)
+│   ├── components/         # Reusable React UI Components
+│   │   ├── CodeBlock.tsx   # Custom syntax highlighting component
+│   │   ├── Footer.tsx      # Global footer
+│   │   ├── GoogleTranslate.tsx # Secure translation dropdown logic
+│   │   ├── Navbar.tsx      # Top navigation header
+│   │   └── Sidebar.tsx     # Contextual documentation sidebar
+│   ├── lib/
+│   │   └── navigation.ts   # Sidebar definitions & "Coming Soon" interceptor logic
+│   └── types.d.ts          # Global TS definitions
+```
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- **Node.js**: v18.0.0 or higher.
+- **npm** or **yarn**.
+
+### Installation
+
+1. Navigate to the project directory:
+
+   ```bash
+   cd nova-documentation
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Development Server
+
+Start the Next.js development server with Turbopack:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Secure Translation Component (`GoogleTranslate.tsx`)
 
-## Deploy on Vercel
+The translation dropdown uses Google's Website Translator but aggressively overwrites its default CSS to eliminate layout shifting (preventing the topmost banner injection or floating buttons).
+Language continuity is handled securely:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Selections are stored locally and obfuscated with a salt.
+- The component forcefully overwrites raw document cookies upon mismatch, essentially locking out users attempting to send invalid payload injections via the `googtrans` cookie in the developer console.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License & Attribution
+
+Designed and developed by **Luminar** for the Nova Programming Language project.
+
+---
+
+> _"The universe compiles in Nova."_

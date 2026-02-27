@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <GoogleTranslate />
           <a
-            href="https://github.com/luminar-dev/nova-lang"
+            href="https://github.com/dearlyfebrianos/Nova-Language"
             target="_blank"
             rel="noopener"
             className="hidden sm:flex items-center gap-1.5 text-sm text-nova-dim hover:text-nova-white transition-colors"

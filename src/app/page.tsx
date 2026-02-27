@@ -114,7 +114,7 @@ export default function HomePage() {
                 Read Docs
               </Link>
               <a
-                href="https://github.com/luminar-dev/nova-lang"
+                href="https://github.com/dearlyfebrianos/Nova-Language"
                 target="_blank"
                 rel="noopener"
                 className="px-6 py-3 border border-nova-border text-nova-dim hover:text-nova-white font-mono text-sm rounded-lg transition-all flex items-center gap-2"

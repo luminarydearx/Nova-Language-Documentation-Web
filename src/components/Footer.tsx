@@ -78,11 +78,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                ["GitHub", "https://github.com/luminar-dev/nova-lang"],
+                ["GitHub", "https://github.com/dearlyfebrianos/Nova-Language"],
                 ["VS Code Extension", "https://marketplace.visualstudio.com"],
                 [
                   "Report a Bug",
-                  "https://github.com/luminar-dev/nova-lang/issues",
+                  "https://github.com/dearlyfebrianos/Nova-Language/issues",
                 ],
                 ["Roadmap", "/docs/about#roadmap"],
               ].map(([label, href]) => (
