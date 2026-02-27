@@ -12,7 +12,7 @@ export interface NavGroup {
   items: NavItem[];
 }
 
-export const navigation: NavGroup[] = [
+const rawNavigation: NavGroup[] = [
   {
     title: "Introduction",
     icon: "✦",
@@ -32,6 +32,7 @@ export const navigation: NavGroup[] = [
       { title: "Functions", href: "/docs/language/functions" },
       { title: "Arrays", href: "/docs/language/arrays" },
       { title: "Objects", href: "/docs/language/objects" },
+      { title: "Input / Output", href: "", badge: "Coming Soon" },
     ],
   },
   {
@@ -43,3 +44,25 @@ export const navigation: NavGroup[] = [
     ],
   },
 ];
+
+export const navigation: NavGroup[] = rawNavigation.map((group) => ({
+  ...group,
+  items: group.items.map((item) => {
+    const normalizedBadge = item.badge?.trim().toLowerCase();
+
+    // If badge is "new" or empty string, return as is (no coming-soon logic)
+    if (!normalizedBadge || normalizedBadge === "new") {
+      return item;
+    }
+
+    // Handle "Coming Soon" variations
+    if (normalizedBadge === "coming soon" || normalizedBadge === "soon") {
+      return {
+        ...item,
+        href: `/docs/coming-soon?feature=${encodeURIComponent(item.title)}`,
+        badge: "Coming Soon",
+      };
+    }
+    return item;
+  }),
+}));

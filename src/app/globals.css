@@ -81,21 +81,52 @@
       transform: translateY(0);
     }
   }
-  @keyframes supernova {
+  @keyframes supernova-core {
     0%,
     100% {
-      transform: scale(1);
+      transform: scale(1) rotate(0deg);
       filter: drop-shadow(0 0 15px rgba(0, 245, 255, 0.4))
         drop-shadow(0 0 30px rgba(191, 95, 255, 0.2));
     }
     50% {
-      transform: scale(1.1);
-      filter: drop-shadow(0 0 35px rgba(0, 245, 255, 0.8))
-        drop-shadow(0 0 70px rgba(191, 95, 255, 0.5));
+      transform: scale(1.15) rotate(5deg);
+      filter: drop-shadow(0 0 40px rgba(0, 245, 255, 0.9))
+        drop-shadow(0 0 80px rgba(191, 95, 255, 0.7));
     }
   }
 
-  --animate-supernova: supernova 4s ease-in-out infinite;
+  @keyframes supernova-ring {
+    0% {
+      transform: scale(0.8) rotate(0deg);
+      opacity: 0.8;
+      border-width: 2px;
+    }
+    100% {
+      transform: scale(2.5) rotate(180deg);
+      opacity: 0;
+      border-width: 0px;
+    }
+  }
+
+  @keyframes supernova-pulse {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.3);
+    }
+  }
+
+  --animate-supernova-core: supernova-core 4s cubic-bezier(0.4, 0, 0.2, 1)
+    infinite;
+  --animate-supernova-ring-1: supernova-ring 3s cubic-bezier(0.1, 0, 0.3, 1)
+    infinite;
+  --animate-supernova-ring-2: supernova-ring 3s cubic-bezier(0.1, 0, 0.3, 1)
+    infinite 1.5s;
+  --animate-supernova-pulse: supernova-pulse 2s ease-in-out infinite;
 
   --shadow-nova:
     0 0 20px rgba(0, 245, 255, 0.15), 0 0 60px rgba(0, 245, 255, 0.05);
@@ -350,4 +381,35 @@ body {
 }
 .nova-table tr:hover td {
   background: rgba(0, 245, 255, 0.02);
+}
+
+/* ── Google Translate Overrides ── */
+body {
+  top: 0 !important;
+  position: static !important;
+}
+/* Hide all permutations of the Google Translate top banner, balloon, and floating widgets */
+.skiptranslate iframe,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+div#goog-gt-,
+.VIpgJd-Zvi9od-aZ2wEe-wOHMyf,
+.VIpgJd-Zvi9od-aZ2wEe-wOHMyf-ti6hGc,
+div[class*="VIpgJd-"] {
+  display: none !important;
+  visibility: hidden !important;
+}
+/* Remove annoying highlight when hovering translated text */
+.goog-text-highlight {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.goog-te-gadget {
+  font-family: var(--font-mono) !important;
+  font-size: 0 !important;
+  color: transparent !important;
+}
+.goog-logo-link {
+  display: none !important;
 }

@@ -60,12 +60,22 @@ export default function HomePage() {
               </span>
             </div>
 
-            {/* Starburst logo */}
-            <div className="flex justify-center mb-8 animate-float">
+            {/* Supernova Explosion Logo */}
+            <div className="relative flex justify-center items-center h-48 w-48 mx-auto mb-10 animate-float">
+              {/* Outer blast wave */}
+              <div className="absolute inset-[-20px] rounded-full blur-[30px] bg-nova-purple/30 animate-supernova-pulse" />
+              {/* Expanding ring 1 */}
+              <div className="absolute inset-4 rounded-full border border-nova-cyan animate-supernova-ring-1" />
+              {/* Expanding ring 2 */}
+              <div className="absolute inset-8 rounded-full border border-nova-purple animate-supernova-ring-2" />
+              {/* Core pulse */}
+              <div className="absolute inset-6 rounded-full bg-nova-cyan/20 blur-xl animate-supernova-pulse" />
+
+              {/* The Nova Logo centered and pulsing heavily */}
               <img
                 src="/icon_nova.png"
                 alt="Nova Logo"
-                className="w-28 h-28 animate-supernova rounded-full shadow-purple"
+                className="w-32 h-32 relative z-10 animate-supernova-core rounded-full shadow-nova-lg"
               />
             </div>
 
