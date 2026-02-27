@@ -32,7 +32,7 @@ const rawNavigation: NavGroup[] = [
       { title: "Functions", href: "/docs/language/functions" },
       { title: "Arrays", href: "/docs/language/arrays" },
       { title: "Objects", href: "/docs/language/objects" },
-      { title: "Input / Output", href: "", badge: "Coming Soon" },
+      { title: "Input", href: "", badge: "Coming Soon" },
       { title: "OOP", href: "", badge: "Coming Soon" }
     ],
   },
