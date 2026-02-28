@@ -65,6 +65,16 @@ export default function OperatorsPage() {
         filename="comparison.nv"
       />
 
+      <h2>Ternary Operator</h2>
+      <p>
+        Short-hand for `if-else` expressions, returns one of two values base on
+        condition.
+      </p>
+      <CodeBlock
+        code={`var score = 85\nvar status = score >= 75 ? "Passed" : "Failed"\nprint status // Out: Passed`}
+        filename="ternary.nv"
+      />
+
       <div className="not-prose flex gap-3 mt-8 pt-8 border-t border-nova-border">
         <Link
           href="/docs/language/control-flow"

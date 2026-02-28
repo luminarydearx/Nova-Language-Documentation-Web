@@ -33,6 +33,10 @@ const rawNavigation: NavGroup[] = [
       { title: "OOP (Classes & Interfaces)", href: "/docs/language/oop" },
       { title: "Structs & Enums", href: "/docs/language/data-structures" },
       { title: "Exception Handling", href: "/docs/language/error-handling" },
+      {
+        title: "Concurrency (Async/Await)",
+        href: "/docs/language/async-await",
+      },
       { title: "Arrays & Objects", href: "/docs/language/arrays" },
     ],
   },
