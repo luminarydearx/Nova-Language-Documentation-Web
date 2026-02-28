@@ -18,6 +18,7 @@ const rawNavigation: NavGroup[] = [
     icon: "✦",
     items: [
       { title: "What is Nova?", href: "/docs" },
+      { title: "Download", href: "/docs/download" },
       { title: "Getting Started", href: "/docs/getting-started" },
       { title: "CLI Reference", href: "/docs/cli" },
     ],
