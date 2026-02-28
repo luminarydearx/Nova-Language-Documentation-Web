@@ -36,6 +36,12 @@ export default function ControlFlowPage() {
         filename="while.nv"
       />
 
+      <h2>do-while loop</h2>
+      <CodeBlock
+        code={`var count = 0\n\ndo {\n    count = count + 1\n} while (count < 3)\nprint count // 3`}
+        filename="do-while.nv"
+      />
+
       <h2>for loop — Range</h2>
       <p>
         The <code>..</code> operator creates a range from start (inclusive) to

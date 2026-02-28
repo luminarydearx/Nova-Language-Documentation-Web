@@ -1,4 +1,4 @@
-export const VERSION = "0.2.0";
+export const VERSION = "0.4.0";
 
 export interface NavItem {
   title: string;
@@ -30,10 +30,10 @@ const rawNavigation: NavGroup[] = [
       { title: "Operators", href: "/docs/language/operators" },
       { title: "Control Flow", href: "/docs/language/control-flow" },
       { title: "Functions", href: "/docs/language/functions" },
-      { title: "Arrays", href: "/docs/language/arrays" },
-      { title: "Objects", href: "/docs/language/objects" },
-      { title: "Input", href: "", badge: "Coming Soon" },
-      { title: "OOP", href: "", badge: "Coming Soon" }
+      { title: "OOP (Classes & Interfaces)", href: "/docs/language/oop" },
+      { title: "Structs & Enums", href: "/docs/language/data-structures" },
+      { title: "Exception Handling", href: "/docs/language/error-handling" },
+      { title: "Arrays & Objects", href: "/docs/language/arrays" },
     ],
   },
   {
