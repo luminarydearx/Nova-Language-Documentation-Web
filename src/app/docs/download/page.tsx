@@ -2,7 +2,7 @@ import CodeBlock from "@/components/CodeBlock";
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Download Nova | v0.4.1" };
+export const metadata: Metadata = { title: "Download Nova | v0.5.7" };
 
 export default function DownloadPage() {
   const platforms = [
@@ -13,24 +13,24 @@ export default function DownloadPage() {
       tag: "Recommended",
       instructions:
         "Extract to a folder and add 'bin' to your Environment PATH.",
-      download: "/downloads/nova-v0.4.1-windows.zip",
+      download: "/downloads/nova-v0.5.7-windows.zip",
     },
     {
-      name: "Linux",
-      icon: "🐧",
-      ext: ".tar.gz",
-      tag: "x64 / ARM",
-      instructions: "Extract and symlink 'bin/nova' to /usr/local/bin.",
-      download: "/downloads/nova-v0.4.1-linux.tar.gz",
-    },
-    {
-      name: "macOS",
-      icon: "🍎",
-      ext: ".zip",
-      tag: "Apple Silicon / Intel",
+      name: "Windows (Installer)",
+      icon: "📦",
+      ext: ".msi",
+      tag: "Auto-Setup",
       instructions:
-        "Extract, then run 'xattr -d com.apple.quarantine bin/nova' to allow execution.",
-      download: "/downloads/nova-v0.4.1-macos.zip",
+        "Interactive installer with GUI. Sets up PATH automatically.",
+      download: "/downloads/Nova-0.5.7.msi",
+    },
+    {
+      name: "Linux / macOS",
+      icon: "♾️",
+      ext: ".zip",
+      tag: "Portable",
+      instructions: "Extract and run 'bin/nova' manually.",
+      download: "/downloads/nova-v0.5.7-portable.zip",
     },
   ];
 
@@ -39,7 +39,7 @@ export default function DownloadPage() {
       <div className="mb-8 pb-6 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-cyan/10 text-nova-cyan border border-nova-cyan/20">
-            v0.4.1
+            v0.5.7
           </span>
           <span className="text-xs font-mono text-nova-dim">
             Latest Stable Candidate
