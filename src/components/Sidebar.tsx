@@ -60,7 +60,7 @@ export default function Sidebar() {
         <div className="text-[11px] font-mono text-nova-border space-y-1">
           <div className="flex justify-between">
             <span>version</span>
-            <span className="text-nova-cyan">0.2.0</span>
+            <span className="text-nova-cyan">0.4.1</span>
           </div>
           <div className="flex justify-between">
             <span>phase</span>

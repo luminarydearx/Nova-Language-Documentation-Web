@@ -1,23 +1,32 @@
-import CodeBlock from '@/components/CodeBlock'
-import Link from 'next/link'
-import type { Metadata } from 'next'
+import CodeBlock from "@/components/CodeBlock";
+import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: 'Objects' }
+export const metadata: Metadata = { title: "Objects" };
 
 export default function ObjectsPage() {
   return (
     <div className="doc-prose animate-fade-up">
       <div className="mb-8 pb-6 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-green/10 text-nova-green border border-nova-green/20">✅ v0.2.0 · NEW</span>
+          <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-green/10 text-nova-green border border-nova-green/20">
+            ✅ v0.4.1 · NEW
+          </span>
         </div>
-        <p className="text-xs font-mono text-nova-dim mb-2">Language Reference</p>
-        <h1 className="font-display text-3xl font-black text-nova-white tracking-wider mb-3">Objects</h1>
-        <p className="text-nova-dim">Key-value data structures with dot and bracket access.</p>
+        <p className="text-xs font-mono text-nova-dim mb-2">
+          Language Reference
+        </p>
+        <h1 className="font-display text-3xl font-black text-nova-white tracking-wider mb-3">
+          Objects
+        </h1>
+        <p className="text-nova-dim">
+          Key-value data structures with dot and bracket access.
+        </p>
       </div>
 
       <h2>Creating Objects</h2>
-      <CodeBlock code={`// Empty object
+      <CodeBlock
+        code={`// Empty object
 var empty = {}
 
 // Object with fields
@@ -35,10 +44,13 @@ var config = {
     "debug": false
 }
 
-print user     // {name: Luminar, age: 1, active: true, score: 9999}`} filename="create.nv" />
+print user     // {name: Luminar, age: 1, active: true, score: 9999}`}
+        filename="create.nv"
+      />
 
       <h2>Accessing Properties</h2>
-      <CodeBlock code={`var person = {
+      <CodeBlock
+        code={`var person = {
     name: "Nova",
     age:  2,
     lang: "Nova"
@@ -52,10 +64,13 @@ print person.age      // 2
 print person["lang"]  // Nova
 
 var key = "name"
-print person[key]     // Nova  (dynamic lookup)`} filename="access.nv" />
+print person[key]     // Nova  (dynamic lookup)`}
+        filename="access.nv"
+      />
 
       <h2>Modifying Objects</h2>
-      <CodeBlock code={`var car = {
+      <CodeBlock
+        code={`var car = {
     brand:  "Nova Motors",
     speed:  0,
     fuel:   100
@@ -71,20 +86,28 @@ print car.fuel       // 80
 
 // Add new property
 car.turbo = true
-print car.turbo      // true`} filename="modify.nv" />
+print car.turbo      // true`}
+        filename="modify.nv"
+      />
 
       <h2>Object Methods</h2>
 
       <div className="not-prose overflow-x-auto mb-6">
         <table className="nova-table">
-          <thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Returns</th>
+              <th>Description</th>
+            </tr>
+          </thead>
           <tbody>
             {[
-              ['obj.keys()',      'array', 'All property names as array'],
-              ['obj.values()',    'array', 'All property values as array'],
-              ['obj.has(key)',    'bool',  'Check if key exists'],
-              ['obj.delete(key)','null',   'Remove a property'],
-              ['obj.len',        'int',   'Number of properties'],
+              ["obj.keys()", "array", "All property names as array"],
+              ["obj.values()", "array", "All property values as array"],
+              ["obj.has(key)", "bool", "Check if key exists"],
+              ["obj.delete(key)", "null", "Remove a property"],
+              ["obj.len", "int", "Number of properties"],
             ].map(([m, r, d]) => (
               <tr key={m}>
                 <td className="font-mono text-nova-cyan text-sm">{m}</td>
@@ -96,7 +119,8 @@ print car.turbo      // true`} filename="modify.nv" />
         </table>
       </div>
 
-      <CodeBlock code={`var planet = {
+      <CodeBlock
+        code={`var planet = {
     name:     "Nova Prime",
     moons:    3,
     habitable: true
@@ -117,10 +141,13 @@ planet.delete("habitable")
 print planet.keys()        // [name, moons]
 
 // Size
-print planet.len           // 2`} filename="methods.nv" />
+print planet.len           // 2`}
+        filename="methods.nv"
+      />
 
       <h2>Iterating Objects</h2>
-      <CodeBlock code={`var scores = {
+      <CodeBlock
+        code={`var scores = {
     Alice: 950,
     Bob:   820,
     Carol: 1100
@@ -142,10 +169,13 @@ for val in scores.values() {
 // Using keys() built-in
 for k in keys(scores) {
     print k + " = " + scores[k]
-}`} filename="iterate.nv" />
+}`}
+        filename="iterate.nv"
+      />
 
       <h2>Nested Objects</h2>
-      <CodeBlock code={`var game = {
+      <CodeBlock
+        code={`var game = {
     title: "Nova Quest",
     player: {
         name:  "Hero",
@@ -170,10 +200,13 @@ print game.world.zone            // Starport
 // Update nested
 game.player.level = 11
 game.player.stats.hp = 120
-print game.player.level          // 11`} filename="nested.nv" />
+print game.player.level          // 11`}
+        filename="nested.nv"
+      />
 
       <h2>Objects + Functions</h2>
-      <CodeBlock code={`// Simulate methods with objects + functions
+      <CodeBlock
+        code={`// Simulate methods with objects + functions
 func createPlayer(name, hp) {
     var player = {
         name: name,
@@ -197,12 +230,15 @@ func takeDamage(player, amount) {
 var hero = createPlayer("Nova", 100)
 takeDamage(hero, 30)     // Nova has 70 HP left
 takeDamage(hero, 50)     // Nova has 20 HP left
-takeDamage(hero, 25)     // Nova has been defeated!`} filename="objects-with-functions.nv" />
+takeDamage(hero, 25)     // Nova has been defeated!`}
+        filename="objects-with-functions.nv"
+      />
 
       <h2>Objects as Config/Data</h2>
-      <CodeBlock code={`var config = {
+      <CodeBlock
+        code={`var config = {
     debug:   false,
-    version: "0.2.0",
+    version: "0.4.1",
     host:    "localhost",
     port:    8080,
     limits: {
@@ -218,12 +254,24 @@ if config.debug {
 
 print "Server: " + config.host + ":" + config.port
 print "Version: " + config.version
-print "Max retries: " + config.limits.maxRetries`} filename="config.nv" />
+print "Max retries: " + config.limits.maxRetries`}
+        filename="config.nv"
+      />
 
       <div className="not-prose flex gap-3 mt-8 pt-8 border-t border-nova-border">
-        <Link href="/docs/language/arrays" className="text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors">← Arrays</Link>
-        <Link href="/docs/language/operators" className="ml-auto text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors">Operators →</Link>
+        <Link
+          href="/docs/language/arrays"
+          className="text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors"
+        >
+          ← Arrays
+        </Link>
+        <Link
+          href="/docs/language/operators"
+          className="ml-auto text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors"
+        >
+          Operators →
+        </Link>
       </div>
     </div>
-  )
+  );
 }

@@ -107,7 +107,7 @@ export default function Footer() {
             MIT License
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs font-mono text-nova-border">v0.2.0</span>
+            <span className="text-xs font-mono text-nova-border">v0.4.1</span>
             <span className="text-xs font-mono text-nova-border">Phase 1</span>
             <span className="w-1.5 h-1.5 rounded-full bg-nova-green animate-pulse" />
             <span className="text-xs font-mono text-nova-green">active</span>

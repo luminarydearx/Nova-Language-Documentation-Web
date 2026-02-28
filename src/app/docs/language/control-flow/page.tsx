@@ -10,7 +10,7 @@ export default function ControlFlowPage() {
       <div className="mb-8 pb-6 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-green/10 text-nova-green border border-nova-green/20">
-            ✅ v0.2.0
+            ✅ v0.4.1
           </span>
         </div>
         <p className="text-xs font-mono text-nova-dim mb-2">
@@ -20,7 +20,7 @@ export default function ControlFlowPage() {
           Control Flow
         </h1>
         <p className="text-nova-dim">
-          Conditionals, loops, and branching — all fully supported in v0.2.0.
+          Conditionals, loops, and branching — all fully supported in v0.4.1.
         </p>
       </div>
 

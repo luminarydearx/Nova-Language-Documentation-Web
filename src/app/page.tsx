@@ -56,7 +56,7 @@ export default function HomePage() {
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-nova-cyan/30 bg-nova-cyan/5 mb-8 animate-fade-up">
               <span className="w-1.5 h-1.5 rounded-full bg-nova-cyan animate-pulse" />
               <span className="text-xs font-mono text-nova-cyan">
-                v0.2.0 · Phase 1 · Core Interpreter
+                v0.4.1 · Phase 1 · Core Interpreter
               </span>
             </div>
 

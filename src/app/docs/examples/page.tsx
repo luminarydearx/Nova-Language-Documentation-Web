@@ -13,14 +13,14 @@ export default function ExamplesPage() {
           Examples
         </h1>
         <p className="text-nova-dim">
-          Real Nova v0.2.0 programs you can copy and run.
+          Real Nova v0.4.1 programs you can copy and run.
         </p>
       </div>
 
       <h2 id="hello">Hello World</h2>
       <CodeBlock
         code={`print "Hello, World!"
-print "✦ Nova v0.2.0"`}
+print "✦ Nova v0.4.1"`}
         filename="01_hello.nv"
       />
 

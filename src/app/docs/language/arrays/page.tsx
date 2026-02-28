@@ -1,23 +1,30 @@
-import CodeBlock from '@/components/CodeBlock'
-import Link from 'next/link'
-import type { Metadata } from 'next'
+import CodeBlock from "@/components/CodeBlock";
+import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: 'Arrays' }
+export const metadata: Metadata = { title: "Arrays" };
 
 export default function ArraysPage() {
   return (
     <div className="doc-prose animate-fade-up">
       <div className="mb-8 pb-6 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-green/10 text-nova-green border border-nova-green/20">✅ v0.2.0 · NEW</span>
+          <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-green/10 text-nova-green border border-nova-green/20">
+            ✅ v0.4.1 · NEW
+          </span>
         </div>
-        <p className="text-xs font-mono text-nova-dim mb-2">Language Reference</p>
-        <h1 className="font-display text-3xl font-black text-nova-white tracking-wider mb-3">Arrays</h1>
+        <p className="text-xs font-mono text-nova-dim mb-2">
+          Language Reference
+        </p>
+        <h1 className="font-display text-3xl font-black text-nova-white tracking-wider mb-3">
+          Arrays
+        </h1>
         <p className="text-nova-dim">Ordered, mutable collections in Nova.</p>
       </div>
 
       <h2>Creating Arrays</h2>
-      <CodeBlock code={`// Empty array
+      <CodeBlock
+        code={`// Empty array
 var empty = []
 
 // Array with values
@@ -29,10 +36,13 @@ var mixed   = [1, "hello", true, null]
 var matrix  = [[1, 2], [3, 4], [5, 6]]
 
 print nums     // [1, 2, 3, 4, 5]
-print names    // [Nova, Luminar, Space]`} filename="create.nv" />
+print names    // [Nova, Luminar, Space]`}
+        filename="create.nv"
+      />
 
       <h2>Accessing Elements</h2>
-      <CodeBlock code={`var fruits = ["apple", "banana", "cherry", "date"]
+      <CodeBlock
+        code={`var fruits = ["apple", "banana", "cherry", "date"]
 
 // Index (0-based)
 print fruits[0]     // apple
@@ -45,10 +55,13 @@ print fruits[-2]    // cherry
 
 // Get length
 print fruits.len    // 4
-print len(fruits)   // 4  (built-in)`} filename="access.nv" />
+print len(fruits)   // 4  (built-in)`}
+        filename="access.nv"
+      />
 
       <h2>Modifying Arrays</h2>
-      <CodeBlock code={`var items = [10, 20, 30]
+      <CodeBlock
+        code={`var items = [10, 20, 30]
 
 // Change element by index
 items[0] = 99
@@ -70,26 +83,34 @@ print items         // [0, 99, 20, 30]
 // shift — remove from beginning
 var first = items.shift()
 print first         // 0
-print items         // [99, 20, 30]`} filename="modify.nv" />
+print items         // [99, 20, 30]`}
+        filename="modify.nv"
+      />
 
       <h2>Array Methods</h2>
 
       <div className="not-prose overflow-x-auto mb-6">
         <table className="nova-table">
-          <thead><tr><th>Method</th><th>Returns</th><th>Description</th></tr></thead>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Returns</th>
+              <th>Description</th>
+            </tr>
+          </thead>
           <tbody>
             {[
-              ['arr.push(val)',       'null',    'Add value to end'],
-              ['arr.pop()',           'value',   'Remove and return last element'],
-              ['arr.shift()',         'value',   'Remove and return first element'],
-              ['arr.unshift(val)',    'null',    'Add value to beginning'],
-              ['arr.len / arr.length','int',    'Number of elements'],
-              ['arr.contains(val)',   'bool',   'Check if value exists'],
-              ['arr.indexOf(val)',    'int',    'Index of value (-1 if not found)'],
-              ['arr.join(sep)',       'string', 'Join elements with separator'],
-              ['arr.slice(from, to)', 'array',  'Extract sub-array'],
-              ['arr.reverse()',       'null',   'Reverse in place'],
-              ['arr.toString()',      'string', 'Convert to string'],
+              ["arr.push(val)", "null", "Add value to end"],
+              ["arr.pop()", "value", "Remove and return last element"],
+              ["arr.shift()", "value", "Remove and return first element"],
+              ["arr.unshift(val)", "null", "Add value to beginning"],
+              ["arr.len / arr.length", "int", "Number of elements"],
+              ["arr.contains(val)", "bool", "Check if value exists"],
+              ["arr.indexOf(val)", "int", "Index of value (-1 if not found)"],
+              ["arr.join(sep)", "string", "Join elements with separator"],
+              ["arr.slice(from, to)", "array", "Extract sub-array"],
+              ["arr.reverse()", "null", "Reverse in place"],
+              ["arr.toString()", "string", "Convert to string"],
             ].map(([m, r, d]) => (
               <tr key={m}>
                 <td className="font-mono text-nova-cyan text-sm">{m}</td>
@@ -102,7 +123,8 @@ print items         // [99, 20, 30]`} filename="modify.nv" />
       </div>
 
       <h2>Iterating Arrays</h2>
-      <CodeBlock code={`var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter"]
+      <CodeBlock
+        code={`var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter"]
 
 // for..in loop
 for planet in planets {
@@ -117,10 +139,13 @@ for i in 0..planets.len {
 // Using range() built-in
 for i in range(planets.len) {
     print planets[i].upper()
-}`} filename="iterate.nv" />
+}`}
+        filename="iterate.nv"
+      />
 
       <h2>Array Built-in Functions</h2>
-      <CodeBlock code={`var numbers = [5, 3, 8, 1, 9, 2]
+      <CodeBlock
+        code={`var numbers = [5, 3, 8, 1, 9, 2]
 
 // len() - global function
 print len(numbers)          // 6
@@ -134,17 +159,23 @@ print last                  // 7
 
 // range() - create number arrays
 var tens = range(0, 100, 10)
-print tens   // [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]`} filename="builtins.nv" />
+print tens   // [0, 10, 20, 30, 40, 50, 60, 70, 80, 90]`}
+        filename="builtins.nv"
+      />
 
       <h2>Array Slicing</h2>
-      <CodeBlock code={`var letters = ["a", "b", "c", "d", "e", "f"]
+      <CodeBlock
+        code={`var letters = ["a", "b", "c", "d", "e", "f"]
 
 print letters.slice(2)      // [c, d, e, f]  (from index 2)
 print letters.slice(1, 4)   // [b, c, d]     (from 1 to 4, exclusive)
-print letters.slice(0, 3)   // [a, b, c]`} filename="slice.nv" />
+print letters.slice(0, 3)   // [a, b, c]`}
+        filename="slice.nv"
+      />
 
       <h2>Joining & Splitting</h2>
-      <CodeBlock code={`var words = ["Nova", "is", "awesome"]
+      <CodeBlock
+        code={`var words = ["Nova", "is", "awesome"]
 
 // join array into string
 print words.join(" ")       // Nova is awesome
@@ -155,10 +186,13 @@ print words.join("-")       // Nova-is-awesome
 var sentence = "Hello World Nova"
 var parts = sentence.split(" ")
 print parts                 // [Hello, World, Nova]
-print parts.len             // 3`} filename="join-split.nv" />
+print parts.len             // 3`}
+        filename="join-split.nv"
+      />
 
       <h2>Nested Arrays (Matrix)</h2>
-      <CodeBlock code={`var matrix = [
+      <CodeBlock
+        code={`var matrix = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
@@ -175,12 +209,24 @@ for row in matrix {
 }
 // 1 2 3
 // 4 5 6
-// 7 8 9`} filename="matrix.nv" />
+// 7 8 9`}
+        filename="matrix.nv"
+      />
 
       <div className="not-prose flex gap-3 mt-8 pt-8 border-t border-nova-border">
-        <Link href="/docs/language/control-flow" className="text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors">← Control Flow</Link>
-        <Link href="/docs/language/objects" className="ml-auto text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors">Objects →</Link>
+        <Link
+          href="/docs/language/control-flow"
+          className="text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors"
+        >
+          ← Control Flow
+        </Link>
+        <Link
+          href="/docs/language/objects"
+          className="ml-auto text-xs font-mono text-nova-dim hover:text-nova-cyan transition-colors"
+        >
+          Objects →
+        </Link>
       </div>
     </div>
-  )
+  );
 }

@@ -10,7 +10,7 @@ export default function DocsPage() {
       <div className="mb-10 pb-8 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-4">
           <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-cyan/10 text-nova-cyan border border-nova-cyan/20">
-            v0.2.0
+            v0.4.1
           </span>
           <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-purple/10 text-nova-purple border border-nova-purple/20">
             Phase 1

@@ -40,7 +40,7 @@ export default function VariablesPage() {
         use <code>UPPER_SNAKE_CASE</code> for constants.
       </p>
       <CodeBlock
-        code={`const VERSION = "0.2.0"\nconst MAX_RETRIES = 3\nconst PI = 3.14159265\nconst AUTHOR = "Luminar"\n\nprint VERSION   // 0.2.0\nprint PI        // 3.14159265`}
+        code={`const VERSION = "0.4.1"\nconst MAX_RETRIES = 3\nconst PI = 3.14159265\nconst AUTHOR = "Luminar"\n\nprint VERSION   // 0.4.1\nprint PI        // 3.14159265`}
         filename="constants.nv"
       />
 

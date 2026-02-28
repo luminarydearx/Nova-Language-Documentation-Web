@@ -10,7 +10,7 @@ export default function AsyncAwaitPage() {
       <div className="mb-8 pb-6 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-purple/10 text-nova-purple border border-nova-purple/20">
-            v0.4.0
+            v0.4.1
           </span>
         </div>
         <p className="text-xs font-mono text-nova-dim mb-2">
