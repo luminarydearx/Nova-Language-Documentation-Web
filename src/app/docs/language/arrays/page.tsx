@@ -10,7 +10,7 @@ export default function ArraysPage() {
       <div className="mb-8 pb-6 border-b border-nova-border">
         <div className="flex items-center gap-2 mb-3">
           <span className="text-xs font-mono px-2 py-0.5 rounded bg-nova-green/10 text-nova-green border border-nova-green/20">
-            ✅ v0.4.1 · NEW
+            ✅ v0.5.7
           </span>
         </div>
         <p className="text-xs font-mono text-nova-dim mb-2">
@@ -74,15 +74,6 @@ print items         // [99, 20, 30, 40]
 // pop — remove from end
 var last = items.pop()
 print last          // 40
-print items         // [99, 20, 30]
-
-// unshift — add to beginning
-items.unshift(0)
-print items         // [0, 99, 20, 30]
-
-// shift — remove from beginning
-var first = items.shift()
-print first         // 0
 print items         // [99, 20, 30]`}
         filename="modify.nv"
       />
@@ -102,15 +93,26 @@ print items         // [99, 20, 30]`}
             {[
               ["arr.push(val)", "null", "Add value to end"],
               ["arr.pop()", "value", "Remove and return last element"],
-              ["arr.shift()", "value", "Remove and return first element"],
-              ["arr.unshift(val)", "null", "Add value to beginning"],
               ["arr.len / arr.length", "int", "Number of elements"],
               ["arr.contains(val)", "bool", "Check if value exists"],
               ["arr.indexOf(val)", "int", "Index of value (-1 if not found)"],
               ["arr.join(sep)", "string", "Join elements with separator"],
               ["arr.slice(from, to)", "array", "Extract sub-array"],
-              ["arr.reverse()", "null", "Reverse in place"],
-              ["arr.toString()", "string", "Convert to string"],
+              ["arr.reverse()", "array", "Reverse in place"],
+              ["arr.sort()", "array", "Sort numerically in place"],
+              ["arr.clear()", "null", "Remove all elements"],
+              ["arr.flat()", "array", "Flatten nested arrays one level"],
+              ["arr.map(fn)", "array", "Transform each element"],
+              [
+                "arr.filter(fn)",
+                "array",
+                "Keep elements where fn returns true",
+              ],
+              ["arr.reduce(fn, init)", "value", "Reduce to single value"],
+              ["arr.find(fn)", "value", "First element where fn returns true"],
+              ["arr.forEach(fn)", "null", "Execute fn for each element"],
+              ["arr.every(fn)", "bool", "True if all elements pass fn"],
+              ["arr.some(fn)", "bool", "True if any element passes fn"],
             ].map(([m, r, d]) => (
               <tr key={m}>
                 <td className="font-mono text-nova-cyan text-sm">{m}</td>

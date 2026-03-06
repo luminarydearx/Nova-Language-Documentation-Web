@@ -40,7 +40,13 @@ const rawNavigation: NavGroup[] = [
         href: "/docs/language/async-await",
       },
       { title: "Arrays & Objects", href: "/docs/language/arrays" },
+      {
+        title: "Built-in Objects",
+        href: "/docs/language/builtins",
+        badge: "NEW",
+      },
       { title: "GUI Development", href: "/docs/language/gui", badge: "NEW" },
+      { title: "Web Server", href: "/docs/language/web-server", badge: "NEW" },
     ],
   },
   {
